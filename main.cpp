@@ -29,10 +29,6 @@ int main () {
         case 2: 
             mostrarPuntajes();
             break;
-        default:
-            cout << "¿Que hiciste? ajjaj";
-            rlutil::anykey();
-            break;
         }
         rlutil::cls();
     }while (seleccion != 3);

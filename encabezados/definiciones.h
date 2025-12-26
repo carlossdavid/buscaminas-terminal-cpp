@@ -20,6 +20,20 @@ enum CASILLAS {
     MINA 
 };
 
+enum CONTROLES {
+    SALIR       = 0, // ESC
+    ENTER       = 1, // ENTER
+	BACKSPACE   = 8, // BACKSCAPE
+
+	ARRIBA      = 14, // FLECHA DE ARRIBA
+    ABAJO       = 15, // FLECHA DE ABAJO
+	IZQUIERDA   = 16, // FLECHA DE IZQUIERDA
+	DERECHA     = 17, // FLECHA DE DERECHA 
+
+    KEY_BANDERA = 102, // LETRA f  
+    KEY_BANDERA_MAYUS = KEY_BANDERA - 32 // LETRA F 
+};
+
 typedef struct {
     int fila = 0;
     int columna = 0;

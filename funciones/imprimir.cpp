@@ -32,7 +32,7 @@ void imprimirTablero(tConfig config, vector<vector<tCelda>>& tablero) {
 
     // --- CONTADOR DE MINAS RESTANTES --- 
     rlutil::locate(1,1); 
-    cout << "Controles: Poner Bandera [F] Revelar Casilla [ENTER] Salir [S]" << endl;
+    cout << "Controles: Poner Bandera [F] Revelar Casilla [Enter] Salir [Esc]" << endl;
     cout << "MINAS RESTANTES: "<< setw(3) << config.minas; 
 
     // --- Imprimir los límites del tablero --- ///

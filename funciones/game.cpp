@@ -171,48 +171,46 @@ void iniciarJuego(tConfig config) {
 
     /// CREAR MINAS 
     crear_minas(config, tablero, config.minas);
+    
+    // Posicionar el cursor en su posicion inicial 
     tablero[playerCursor.columna][playerCursor.fila].activa = true; 
-
 
     /// Imprimir tablero
     imprimirTablero(config, tablero);
 
-
     // BUCLE PRINCPAL DEL JUEGO 
     while (!gameOver) {
-
+        tCelda& celdaActual =tablero[playerCursor.fila][playerCursor.columna];  
         switch(rlutil::getkey()) {
-        case rlutil::KEY_UP: // ARRIBA
+        case ARRIBA:
             if (playerCursor.fila > 0) moverCursor(tablero, playerCursor, playerCursor.fila - 1, playerCursor.columna);
             break;
-        case rlutil::KEY_DOWN: // ABAJO
+        case ABAJO: 
             if (playerCursor.fila < config.filas - 1) moverCursor(tablero, playerCursor, playerCursor.fila + 1, playerCursor.columna);
             break;
-        case rlutil::KEY_LEFT: // IZQUIERDA
+        case IZQUIERDA:
             if (playerCursor.columna > 0) moverCursor(tablero, playerCursor, playerCursor.fila, playerCursor.columna-1);
             break;
-        case rlutil::KEY_RIGHT: // DERECHA 
+        case DERECHA:
             if (playerCursor.columna < config.columnas - 1) moverCursor(tablero, playerCursor, playerCursor.fila, playerCursor.columna+1);
             break; 
-        case 70:
-        case 102: // f o F | BANDERA
-            if (tablero[playerCursor.fila][playerCursor.columna].bandera) {
-                tablero[playerCursor.fila][playerCursor.columna].bandera = false;
+        case KEY_BANDERA:
+        case KEY_BANDERA_MAYUS: // Es la letra puede ser mayuscula o minínscula indistintamente
+            if (celdaActual.bandera) {
+                celdaActual.bandera = false;
                 playerCursor.minas_restantes++;
-            } else if (tablero[playerCursor.fila][playerCursor.columna].despejada == false) {
-                tablero[playerCursor.fila][playerCursor.columna].bandera = true;
+            } else if (celdaActual.despejada == false) {
+                celdaActual.bandera = true;
                 playerCursor.minas_restantes--;
             }
             rlutil::locate(18, 2);
             cout << setw(3) << playerCursor.minas_restantes; 
-            imprimirCelda(tablero[playerCursor.fila][playerCursor.columna], convertirX(playerCursor.columna), convertirY(playerCursor.fila));
+            imprimirCelda(celdaActual, convertirX(playerCursor.columna), convertirY(playerCursor.fila));
             break;
-        case rlutil::KEY_ENTER:
-        case 71:
-        case 103: // Enter || G || g || Desvelar casilla 
+        case ENTER:
             // Evitar que una casilla con bandera sea desvelada
-            if (tablero[playerCursor.fila][playerCursor.columna].bandera == false 
-                 && tablero[playerCursor.fila][playerCursor.columna].despejada == false) {
+            if (celdaActual.bandera == false 
+                 && celdaActual.despejada == false) {
                 // Se agrega 1 a los movimientos del jugador para el registro del score
                 playerCursor.movimientos++;
 
@@ -238,11 +236,8 @@ void iniciarJuego(tConfig config) {
                     }; 
                 }
             }
-
-
             break;
-        case 83:
-        case 115: // S o s | SALIR 
+        case SALIR:
             gameOver = true;
             break;
         } 
