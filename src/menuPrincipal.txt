@@ -24,3 +24,5 @@ ______                               _
                     DIFICULTAD
                     PUNTUACIONES
                     SALIR
+
+↑↓ Mover | [Espacio] Seleccionar

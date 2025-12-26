@@ -27,7 +27,7 @@ int desplegarMenu(string archivo, int inicioX, int inicioY, string listaOpciones
         // Controlar 
         switch(rlutil::getkey()) 
         {
-        case 14: // UP
+        case ARRIBA: // UP
             // Borrar cursor anterior
             rlutil::locate(inicioX, inicioY+cursorPos.y); 
             cout << "  " << setw(opcion_size + 1) << left  << listaOpciones[cursorPos.y]; 
@@ -36,7 +36,7 @@ int desplegarMenu(string archivo, int inicioX, int inicioY, string listaOpciones
             if (cursorPos.y < 0) cursorPos.y = 0;
             break;
 
-        case 15: // DOWN 
+        case ABAJO: // DOWN 
             // Borrar cursor anterior
             rlutil::locate(inicioX, inicioY+cursorPos.y); 
             cout << "  " << setw(opcion_size + 1 ) << left << listaOpciones[cursorPos.y]; 
@@ -45,12 +45,10 @@ int desplegarMenu(string archivo, int inicioX, int inicioY, string listaOpciones
             if (cursorPos.y > numeroOpciones-1) cursorPos.y = numeroOpciones-1; 
             break;
 
-        case 1: // ENTER
+        case ENTER: // ENTER
             op = cursorPos.y;
             salir = true; 
             break; 
-        default:
-        break;
         }
     } while (!salir);
     return op; 

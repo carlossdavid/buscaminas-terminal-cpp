@@ -33,7 +33,7 @@ void imprimirTablero(tConfig config, vector<vector<tCelda>>& tablero) {
     // --- CONTADOR DE MINAS RESTANTES --- 
     rlutil::locate(1,1); 
     cout << "Controles: Poner Bandera [F] Revelar Casilla [Enter] Salir [Esc]" << endl;
-    cout << "MINAS RESTANTES: "<< setw(3) << config.minas; 
+    cout << "💣: "<< setw(3) << config.minas; 
 
     // --- Imprimir los límites del tablero --- ///
     // Lineas superior e inferior horizontales 
@@ -91,11 +91,11 @@ void imprimirCelda(tCelda celda, int x, int y) {
 
     // IMPRIMIR CONTENIDO 
     if (celda.bandera) {
-        cout << "|>";
+        cout << "🚩";
     } else if (!celda.despejada) {
         cout<<"░░"; 
     } else if (celda.estado == MINA) {
-        cout << "**";
+        cout << "💣";
     } else if (celda.minasAlrededor > 0) {
         cout << " " << celda.minasAlrededor; 
     } else {

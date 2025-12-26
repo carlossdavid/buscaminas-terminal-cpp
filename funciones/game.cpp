@@ -203,7 +203,7 @@ void iniciarJuego(tConfig config) {
                 celdaActual.bandera = true;
                 playerCursor.minas_restantes--;
             }
-            rlutil::locate(18, 2);
+            rlutil::locate(5, 2);
             cout << setw(3) << playerCursor.minas_restantes; 
             imprimirCelda(celdaActual, convertirX(playerCursor.columna), convertirY(playerCursor.fila));
             break;

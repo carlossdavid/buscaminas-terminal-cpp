@@ -14,4 +14,3 @@ SELECCIONA LA DIFICULTAD DEL JUEGO:
   Nivel intermedio: 16 x 16 y 40 minas
   Nivel experto: 16 x 30 y 99 minas
   Nivel dios: 30 x 30 y 130 minas
-  

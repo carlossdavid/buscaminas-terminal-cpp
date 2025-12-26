@@ -22,7 +22,7 @@ enum CASILLAS {
 
 enum CONTROLES {
     SALIR       = 0, // ESC
-    ENTER       = 1, // ENTER
+    ENTER       = 32, // ENTER
 	BACKSPACE   = 8, // BACKSCAPE
 
 	ARRIBA      = 14, // FLECHA DE ARRIBA
@@ -45,7 +45,7 @@ typedef struct {
 typedef struct {
     int filas = 8;
     int columnas = 8;
-    int minas = 1; 
+    int minas = 10; 
     int dificultad = 2; 
 } tConfig;
 
