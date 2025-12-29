@@ -74,11 +74,11 @@ void menuDificultad (tConfig& config) {
     int opcion_size = 47; 
     int nOpciones = 5;
     string listaOpciones[nOpciones] = {
-        "Nivel si tocas una mina ganas: 5 x 5 y 3 minas",  
-        "Nivel principiante : 8 x 8 y 10 minas",
-        "Nivel intermedio: 16 x 16 y 40 minas",
-        "Nivel experto: 16 x 30 y 99 minas", 
-        "Nivel dios: 30 x 30 y 130 minas",
+        "Si tocas una mina ganas: 5 x 5 y 3 minas",  
+        "Principiante: 8 x 8 y 10 minas",
+        "Intermedio: 16 x 16 y 40 minas",
+        "Experto: 16 x 30 y 70 minas", 
+        "Vidente: 30 x 30 y 130 mina",
     } ;
 
     int op; 

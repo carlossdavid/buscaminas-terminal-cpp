@@ -32,7 +32,7 @@ void imprimirTablero(tConfig config, vector<vector<tCelda>>& tablero) {
 
     // --- CONTADOR DE MINAS RESTANTES --- 
     rlutil::locate(1,1); 
-    cout << "Controles: Poner Bandera [F] Revelar Casilla [Enter] Salir [Esc]" << endl;
+    cout << "[F] Poner Bandera | [Espacio] Revelar Casilla | [Esc] Salir " << endl;
     cout << "💣: "<< setw(3) << config.minas; 
 
     // --- Imprimir los límites del tablero --- ///
@@ -83,7 +83,28 @@ void imprimirCelda(tCelda celda, int x, int y) {
         rlutil::setColor(rlutil::WHITE);
     } else if(celda.minasAlrededor != 0) {
         rlutil::setBackgroundColor(rlutil::BLACK);
-        rlutil::setColor(rlutil::BLUE);
+
+        switch (celda.minasAlrededor) {
+            case 1: 
+                rlutil::setColor(rlutil::BLUE);
+                break;
+            case 2: 
+                rlutil::setColor(rlutil::GREEN);
+                break; 
+            case 3: 
+                rlutil::setColor(rlutil::RED);
+                break;
+            case 4: 
+                rlutil::setColor(rlutil::YELLOW);
+                break;
+            case 5:
+                rlutil::setColor(rlutil::BROWN); 
+                break;
+            default:
+                rlutil::setColor(rlutil::WHITE);
+                break;
+        }
+        
     }  else {
         rlutil::setBackgroundColor(rlutil::BLACK);
         rlutil::setColor(rlutil::WHITE);
