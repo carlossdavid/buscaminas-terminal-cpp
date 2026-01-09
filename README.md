@@ -1,4 +1,4 @@
-# Buscaminas en terminal C++ 
+# Buscaminas en Terminal | Minesweeper on Terminal | Cpp
 Juego buscaminas clásico, simulado en una interfaz de terminal. Se hizo uso de la librería rlutil para gestionar la parte "gráfica". Tiene un registro de puntajes y variación de dificultad dinámica. 
 ## 📸 Vistas del Juego
 
