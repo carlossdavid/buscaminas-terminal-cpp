@@ -31,11 +31,13 @@ Se puede descargar el ejecutable directamente. Ten en cuenta que el juego depend
 - Sistema de dificultades (Fácil, Intermedio, Experto, Extremo).
 - Interfaz de colores en consola mediante `rlutil.h`.
 
+
 ## Conceptos aplicados 
 - **Estructuras de datos:** Uso de `enum`, `struct` y `vector`.
 - **Paso por referencia:** Optimización de memoria usando `&`.
 - **Modularización:** Organización del código en múltiples archivos `.cpp` y `.h`.
-- **Gestión de archivos:** Lectura y escritura de archivos `CSV` para puntajes. 
+- **Gestión de archivos:** Lectura y escritura de archivos `CSV` para puntajes.
+- **Recursividad:** Funciones de búsqueda de casillas con recursividad. 
 ## Tecnologías utilizadas
 - **C++**
 - **rlutil.h**: Para el manejo de colores y captación de teclas.
